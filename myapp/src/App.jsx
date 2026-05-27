@@ -2,15 +2,29 @@ import { useState } from "react";
 
 function App() {
 
-  const [count, setCount] = useState(0);
+  const [name, setName] = useState("");
+  const [displayName, setDisplayName] = useState("");
 
   return (
     <div>
 
-      <h1>Count: {count}</h1>
+      <h1>Hello {displayName}</h1>
 
-      <button onClick={() => setCount(count + 1)}>
-        Increase
+      <input
+        type="text"
+        placeholder="Enter your name"
+
+        // Complete here
+        value={name}
+
+        // Complete here
+        onChange={(e)=>setName(e.target.value)}
+      />
+
+      <button
+        onClick={()=>setDisplayName(name)}
+      >
+        Submit
       </button>
 
     </div>
